@@ -1,0 +1,59 @@
+* {
+	margin:0;
+	padding:0;
+
+	box-sizing: border-box;
+}
+
+body {
+	overflow:hidden;
+	background-color:#ddd;
+
+	font-family: 'Jua', sans-serif;
+}
+
+.container {
+	overflow:hidden;
+	width:100vw;
+	height:100vh;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+
+#form {
+	width: 50em;
+}
+
+.form-group {
+	display: flex;
+	flex-direction: column;
+	
+}
+
+#form .form-group, button {
+	margin-top: 1em;
+	cursor: pointer;
+}
+
+#form input, select, button, textarea {
+	height: 2.5em;
+	width: 100%;
+	padding: 0.7em;
+
+	border-radius: 7px;
+	border-width: 0;
+
+	outline: 0;
+
+	background-color: #fff;
+
+}
+
+#form textarea {
+	height: 20em;
+
+	padding: 1.8em;
+}

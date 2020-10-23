@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/basic.css">
+  <title>Alphabet book</title>
+
+
+</head>
+<body>
+
+  <div class="container">
+    <form action="" method="get" id="form">
+      <div class="form-group">
+        <label for="name">Nome</label>
+        <input type="text" name="name" id="name" placeholder="Digite o nome">
+      </div>
+      
+      <div class="form-group">
+        <label for="sex">Sexo</label>
+        <select name="sex" id="sex">
+          <option value="">Sexo</option>
+          <option value="m">Masculino</option>
+          <option value="f">Feminino</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="characterName">Personagem</label>
+        <select name="characterName" id="characterName">
+          <option value="">Personagem</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="cover">Capa</label>
+        <select name="cover" id="cover">
+          <option value="blueCover">Azul</option>
+          <option value="redCover">Vermelho</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="coverType">Capa</label>
+        <select name="coverType" id="coverType">
+          <option value="hard">Dura</option>
+          <option value="soft">Mole</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="dedication">Dedicatória</label>
+        <textarea name="dedication" id="dedication" cols="30" rows="10"></textarea>
+      </div>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+  
+
+  <script src="./js/api.js"></script>
+
+  <script type="text/javascript">
+
+    const form = document.querySelector("#form");
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      let values = {};
+
+      [...form.elements].map(element => {
+        values[element.name] = element.value;
+      });
+
+      const api = new Api();
+
+      let data = await api.execute(values)
+      
+      data = JSON.stringify(data);
+
+      localStorage.setItem("data", data);
+
+      window.location.href = "./preview.html";
+
+    });
+
+    form.querySelector("#sex").addEventListener("change", event => {
+      let characterNameElement = form.querySelector("#characterName");
+
+      characterNameElement.innerHTML = '';
+      characterNameElement.innerHTML = '<option value="">Personagem</option>';
+
+      const characters = [
+        {
+          characterName: "carlos",
+          sex: 'm'
+        },
+        {
+          characterName: "luiza",
+          sex: 'f'
+        },
+        {
+          characterName: "julia",
+          sex: 'f'
+        },
+        {
+          characterName: "adan",
+          sex: 'm'
+        },
+        {
+          characterName: "bia",
+          sex: 'f'
+        },
+        {
+          characterName: "roger",
+          sex: 'm'
+        },
+      ];
+
+      characters.forEach(character => {
+        if (character.sex === event.target.value) {
+
+          let el = document.createElement("option");
+
+          el.value = character.characterName;
+          el.textContent = character.characterName;
+
+          characterNameElement.appendChild(el);
+        }
+      });
+    });
+
+  </script>
+
+</body>
+</html>

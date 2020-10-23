@@ -1,0 +1,67 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+<meta name="viewport" content="width = 1050, user-scalable = no" />
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/preview.css">
+
+<script type="text/javascript" src="./extras/jquery.min.1.7.js"></script>
+<script type="text/javascript" src="./extras/modernizr.2.5.3.min.js"></script>
+
+<title>Preview book</title>
+
+</head>
+<body>
+
+<div class="wrapper">
+
+	<div class="flipbook-viewport">
+		<div class="flipbook-container">
+			<div class="flipbook">
+				
+			</div>
+
+			
+		</div>
+	</div>
+
+
+</div>
+
+<script src="./js/api.js"></script>
+<script src="./js/PreviewBook.js"></script>
+<script type="text/javascript">
+
+new PreviewBook();
+
+function loadApp() {
+
+	$('.flipbook').turn({
+		width:922,
+		height:600,
+		elevation: 50,
+		gradients: true,
+		autoCenter: true
+	});
+}
+
+yepnope({
+	test : Modernizr.csstransforms,
+	yep: ['./lib/turn.js'],
+	nope: ['./lib/turn.html4.min.js'],
+	both: ['./css/basic.css'],
+	complete: loadApp
+});
+
+
+
+</script>
+
+</body>
+</html>

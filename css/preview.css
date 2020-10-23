@@ -1,0 +1,155 @@
+body {
+  background-color: #ddd;
+  font-family: 'Jua', sans-serif;
+	overflow:hidden;
+	margin:0;
+	padding:0;
+}
+
+.wrapper {
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	flex-direction: column;
+
+	height: 100vh;
+	/* width: 100vw; */
+}
+
+.flipbook-viewport{
+	overflow:hidden;
+  /* position: relative; */
+	width: 100%;
+	/* height: 100%; */
+
+	display: flex;
+
+	justify-content: center;
+
+	align-items: center;
+}
+
+.flipbook {
+  position: relative;
+
+  font-size: 1.2rem;
+}
+
+.flipbook-viewport .flipbook{
+	width: 922px;
+	height: 600px;
+	
+}
+
+.flipbook-viewport .flipbook-container{
+	
+	position:absolute;
+
+}
+
+
+.flipbook-viewport .page{
+	width:461px;
+	height:600px;
+	background-color:white;
+	background-repeat:no-repeat;
+	background-size: 100% 100%;
+}
+
+.flipbook .page{
+	-webkit-box-shadow:0 0 20px rgba(0,0,0,0.2);
+	-moz-box-shadow:0 0 20px rgba(0,0,0,0.2);
+	-ms-box-shadow:0 0 20px rgba(0,0,0,0.2);
+	-o-box-shadow:0 0 20px rgba(0,0,0,0.2);
+	box-shadow:0 0 20px rgba(0,0,0,0.2);
+}
+
+.flipbook-viewport .page img{
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	margin:0;
+} 
+
+.flipbook-viewport .shadow{
+	-webkit-transition: -webkit-box-shadow 0.5s;
+	-moz-transition: -moz-box-shadow 0.5s;
+	-o-transition: -webkit-box-shadow 0.5s;
+	-ms-transition: -ms-box-shadow 0.5s;
+
+	-webkit-box-shadow:0 0 20px #ccc;
+	-moz-box-shadow:0 0 20px #ccc;
+	-o-box-shadow:0 0 20px #ccc;
+	-ms-box-shadow:0 0 20px #ccc;
+	box-shadow:0 0 20px #ccc;
+}
+
+.cover {
+  display: flex;
+  
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  font-size: 2em;
+  color: #fff;
+
+}
+
+.back-cover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dedication-page {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.dedication-text {
+
+  margin: 4.5em ;
+  text-align: justify;
+
+}
+
+.text-bottom {
+  margin-right: 10px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.last-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.last-page strong {
+  font-size: 1em;
+  color: #fff;
+
+}
+
+.top-group-history {
+  margin-left: 10px;
+  width: 25%;
+}
+
+.page-name {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
