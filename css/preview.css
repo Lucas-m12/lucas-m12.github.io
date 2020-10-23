@@ -1,7 +1,6 @@
 body {
   background-color: #ddd;
   font-family: 'Jua', sans-serif;
-	overflow:hidden;
 	margin:0;
 	padding:0;
 }
@@ -21,7 +20,6 @@ body {
 }
 
 .flipbook-viewport{
-	/* overflow:hidden; */
 	width: 100%;
 
 	display: flex;
