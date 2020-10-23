@@ -6,30 +6,35 @@
 }
 
 body {
-	overflow:hidden;
+	overflow-x: hidden;
+	overflow-y: scroll;
 	background-color:#ddd;
 
 	font-family: 'Jua', sans-serif;
 }
 
 .container {
-	overflow:hidden;
-	width:100vw;
-	height:100vh;
+	/* overflow:hidden; */
 
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	margin: 1em 1em;
 
 }
 
 #form {
+	
+
 	width: 50em;
+	
+	
 }
 
 .form-group {
 	display: flex;
 	flex-direction: column;
+	/* width: 50em; */
 	
 }
 
@@ -53,7 +58,7 @@ body {
 }
 
 #form textarea {
-	height: 20em;
+	height: 15em;
 
 	padding: 1.8em;
 }
